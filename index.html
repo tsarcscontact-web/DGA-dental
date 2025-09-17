@@ -241,8 +241,39 @@
     </div>
 
     <script src="script.js"></script>
+        <script>
+        const lerp = (start, end, t) => start + (end - start) * t;
+
+        const smoothObject = (object, currentPosition, currentRotation, targetPosition, targetRotation, smoothFactor) => {
+            object.position.x = lerp(currentPosition.x, targetPosition.x, smoothFactor);
+            object.position.y = lerp(currentPosition.y, targetPosition.y, smoothFactor);
+            object.position.z = lerp(currentPosition.z, targetPosition.z, smoothFactor);
+
+            object.rotation.x = lerp(currentRotation.x, targetRotation.x, smoothFactor);
+            object.rotation.y = lerp(currentRotation.y, targetRotation.y, smoothFactor);
+            object.rotation.z = lerp(currentRotation.z, targetRotation.z, smoothFactor);
+        };
+
+
+        object.position.lerp(detectedPosition, 0.1);
+        object.quaternion.slerp(detectedQuaternion, 0.1);
+
+        if (Math.abs(scaleChange) > threshold) scaleChange = threshold;
+        if (Math.abs(rotationChange) > threshold) rotationChange = threshold;
+
+        const smoothObjectPosition = (object, targetPosition, lerpFactor) => {
+            object.position.lerp(targetPosition, lerpFactor); // Smooth positions
+            object.quaternion.slerp(targetQuaternion, lerpFactor); // Smooth rotation
+        };
+
+        // Example usage in the animation loop
+        smoothObjectPosition(object, detectedPosition, 0.1);
+
+
+    </script>
 
 </body>
 
 
 </html>
+
