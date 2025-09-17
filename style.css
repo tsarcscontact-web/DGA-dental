@@ -282,7 +282,7 @@
          position: absolute;
          left: 0;
          right: 0;
-         bottom: 10%;
+         bottom: 6%;
          top: auto;
          margin: auto;
          width: 252px;
@@ -317,4 +317,5 @@
 
        .a-enter-vr {
          display: none !important;
+
        }
