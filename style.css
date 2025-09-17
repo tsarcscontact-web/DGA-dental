@@ -155,7 +155,7 @@
        }
 
        .logo-main {
-         width: 145px;
+         width: 120px;
          border-radius: 10px;
          margin: 0 0 15px 0;
          padding: 10px;
@@ -282,7 +282,7 @@
          position: absolute;
          left: 0;
          right: 0;
-         bottom: 6%;
+         bottom: 5%;
          top: auto;
          margin: auto;
          width: 252px;
@@ -319,4 +319,5 @@
          display: none !important;
 
        }
+
 
